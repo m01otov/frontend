@@ -1,0 +1,73 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins.scss';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/grid.mixins.scss';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins.scss';
+
+.card {
+  border-radius: var(--radius-base);
+  background-color: var(--color-foreground);
+  padding: calc(var(--indent-base)) calc(var(--indent-base) * 1.5);
+  color: var(--color-text-primary);
+  @include mage-grid-template(
+    $template-area:
+      'title edit'
+      'discription discription'
+      'last_changed last_changed'
+      'export files',
+    $gap: 16px,
+  );
+
+  &__title {
+    grid-area:  title;
+    align-self: center;
+    font-weight: 600;
+    font-size: 1.13rem;
+  }
+
+  &__edit {
+    grid-area: edit;
+    background-color: var(--color-background);
+    justify-self: end;
+    @include circle(32px);
+    @include flex-row(0, center, center);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 300ms;
+
+    &:hover {
+      color: var(--color-accent-primary);
+    }
+  }
+
+  &__discription {
+    grid-area: discription;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary)
+  }
+
+  &__last_changed {
+    grid-area: last_changed;
+    height: 28px;
+    font-size: 0.75rem;
+    @include flex-row($align: end, $justify: end);
+
+    &_static {
+      color: var(--color-text-secondary);  
+    }
+  }
+
+  &__export {
+    grid-area: export;
+    justify-self: start;
+    font-weight: 500;
+    font-size: 0.8rem;
+    @include clear-button-defaults;
+  }
+
+  &__files {
+    grid-area: files;
+    justify-self: end;
+    font-weight: 500;
+    font-size: 0.8rem;
+  }
+}

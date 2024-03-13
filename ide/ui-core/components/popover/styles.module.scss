@@ -1,0 +1,15 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/effects.mixins';
+
+.popover {
+  @include flex-column(0, stretch);
+  position: absolute;
+  z-index: 1;
+  top: var(--position-y);
+  left: var(--position-x);
+  min-width: var(--min-width);
+  background-color: var(--color-background-darker);
+  border-radius: calc(var(--radius-base) - 2px);
+  overflow: hidden;
+  @include shadow;
+}

@@ -1,0 +1,22 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/effects.mixins';
+
+.drawer {
+  position: absolute;
+  overflow: hidden;
+  min-width: 368px;
+  height: 100%;
+  top: 0;
+  z-index: 1;
+  background-color: var(--color-foreground);
+  padding: var(--indent-base);
+  @include shadow;
+
+  &--left {
+    left: 0;
+  }
+
+  &--right {
+    right: 0;
+  }
+}

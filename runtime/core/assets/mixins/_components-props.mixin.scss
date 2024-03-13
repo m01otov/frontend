@@ -1,0 +1,19 @@
+@mixin rendarable-commons {
+  position: absolute;
+  overflow: hidden;
+  user-select: none;
+}
+
+@mixin transform-component {
+  top: var(--position-y);
+  left: var(--position-x);
+}
+
+@mixin dimensions-component {
+  width: var(--width);
+  height: var(--height);
+}
+
+@mixin corner-radius-component {
+  border-radius: var(--corner-radius);
+}

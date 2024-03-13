@@ -1,0 +1,73 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/state.mixins';
+@import '../../assets/styles/mixins/effects.mixins';
+
+@mixin font-props() {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: .03rem;
+}
+
+.select {
+  @include flex-row(8px, center, space-between);
+  padding: calc(var(--indent-base) / 2) var(--indent-base);
+  border-radius: var(--radius-base);
+  background-color: var(--color-background);
+  width: 100%;
+
+  @include focused-div {
+    outline: 1px solid var(--color-accent-primary);
+  }
+
+  @include disabled-div {
+    opacity: .5;
+  }
+
+  &--show-options {
+    .select_arrow {
+      transform: rotate(180deg)
+    }
+  }
+
+  &_value {
+    flex: 1;
+    @include flex-row(8px);
+    @include font-props;
+    color: var(--color-text-primary);
+    user-select: none;
+
+    & > *:first-child {
+      color: var(--color-text-secondary);
+    }
+
+    &--empty {
+      color: var(--color-text-secondary);
+      font-weight: 400;
+      font-style: italic;
+    }
+  }
+
+  &_arrow {
+    flex-shrink: 0;
+    color: var(--color-text-secondary);
+    transition: transform 200ms
+  }
+
+}
+
+.option {
+  @include flex-row(8px);
+  @include font-props;
+  padding: calc(var(--indent-base) / 2.5) var(--indent-base);
+  color: var(--color-text-secondary);
+  width: 100%;
+  user-select: none;
+  transition: background-color 200ms, color 200ms;
+  
+  &:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--color-accent-primary);
+  }
+}

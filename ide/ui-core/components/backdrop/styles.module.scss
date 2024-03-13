@@ -1,0 +1,13 @@
+@import '../../assets/styles/mixins/shape.mixins';
+
+.backdrop {
+  @include rect(100%, 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .45);
+  &-transparent {
+    background-color: transparent;
+  }
+}

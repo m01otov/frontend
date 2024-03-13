@@ -1,0 +1,16 @@
+@import '../../../../assets/mixins/components-props.mixin';
+
+.html_input_renderable {
+  @include rendarable-commons;
+  @include transform-component;
+  @include dimensions-component;
+  border-radius: var(--corner-radius);
+  background-color: var(--color);
+  color: var(--text-color);
+  font-size: var(--text-size);
+  line-height: var(--text-line-height);
+  border-width: var(--stroke-width);
+  border-style: var(--stroke-style);
+  border-color: var(--stroke-color);
+  outline: none;
+}

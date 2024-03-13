@@ -1,0 +1,20 @@
+{
+  "name": "@lukoil/scad",
+  "private": true,
+  "workspaces": [
+    "ide/*",
+    "runtime/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspaces foreach --from '{@lukoil/scad-ide-app,@lukoil/scad-runtime-app}' -p -v -i run dev",
+    "dev:ide": "yarn workspace @lukoil/scad-ide-app dev",
+    "dev:runtime": "yarn workspace @lukoil/scad-runtime-app dev",
+    "build": "yarn workspaces foreach --from '{@lukoil/scad-ide-app,@lukoil/scad-runtime-app}' -p -v -i run build",
+    "build:ide": "yarn workspace @lukoil/scad-ide-app build",
+    "build:runtime": "yarn workspace @lukoil/scad-runtime-app build"
+  },
+  "packageManager": "yarn@3.2.4",
+  "dependencies": {
+    "react-hook-form": "^7.47.0"
+  }
+}

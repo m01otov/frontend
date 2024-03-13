@@ -1,0 +1,11 @@
+.screen_editor {
+  height: 100%;
+  display: flex;
+  flex-grow: 1;
+
+  &__workarea {
+    display: grid;
+    grid-template-columns: minmax(0px, auto);
+    grid-template-rows: 40px minmax(0px, auto);
+  }
+}

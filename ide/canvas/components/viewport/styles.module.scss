@@ -1,0 +1,77 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.viewport {
+  @include rect(100%, 100%);
+  position: relative;
+  overflow: hidden;
+
+  &_grid {
+    @include rect(100%, 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    background-image: radial-gradient(#484d54 1%, transparent calc(4% / var(--scale)));
+    background-position: calc(var(--translateX) + calc(25px * var(--scale))) calc(var(--translateY) + calc(25px * var(--scale)));
+    background-size: calc(50px * var(--scale)) calc(50px * var(--scale));
+    background-color: var(--color-background);
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  
+    &::before {
+      @include rect(100%, 1px);
+      border-top: 1px dashed var(--color-x-axis);
+      transform: translateY(var(--translateY));
+    }
+
+    &::after {
+      @include rect(1px, 100%);
+      border-left: 1px dashed  var(--color-y-axis);
+      transform: translateX(var(--translateX));
+    }
+  }
+
+  &_workarea {
+    position: absolute;
+    width: var(--workareaW);
+    height: var(--workareaH);
+    transform-origin: 50% 50%;
+    transform: 
+      translate3d(calc(var(--translateX) - 50%), calc(var(--translateY) - 50%), 0)
+      scale3d(var(--scale), var(--scale), 1);
+
+    // TODO: remove
+    &--debug-outline {
+      outline: 1px dashed red;
+      outline-offset: -1px;
+    }
+
+    &--content-bounds {
+      &:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1920px;
+        height: 1080px;
+        border: 1px dashed red;
+        position: absolute;
+        z-index: -1;
+      }
+    }
+
+    &__content {
+      position: relative;
+      width: auto;
+      height: auto;
+      transform: translate3d(calc(var(--workareaW) / 2), calc(var(--workareaH) / 2), 0)
+    }
+  }
+}

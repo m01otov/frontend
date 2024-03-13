@@ -1,0 +1,7 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.tree {
+  &--over {
+    background-color: var(--color-foreground-lighter);
+  }
+}

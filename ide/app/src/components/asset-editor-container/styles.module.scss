@@ -1,0 +1,11 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.asset_editor_container {
+  width: 100%;
+  height: 100%;
+  
+  &--empty {
+    @include flex-row(0, center, center);
+    color: var(--color-background-lighter);
+  }
+}

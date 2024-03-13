@@ -1,0 +1,36 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/state.mixins';
+
+.button {
+  @include clear-button-defaults();
+  @include inline-grid-centering(8px);
+  padding: calc(var(--indent-base) / 2) var(--indent-base);
+  border-radius: var(--radius-base);
+  transition: color 200ms, background-color 200ms;
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  &--weight {
+    &-primary {
+      background-color: var(--color-accent-primary);
+      color: var(--color-text-primary);
+
+      @include hover-active {
+        background-color: var(--color-accent-primary-on);
+      }
+    }
+
+    &-secondary {
+      background-color: var(--color-accent-secondary);
+      color: var(--color-text-secondary);
+
+      @include hover-active {
+        background-color: var(--color-accent-secondary-on);
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: .5;
+  }
+}

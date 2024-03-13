@@ -1,0 +1,22 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.widget_editor_outliner_item {
+
+  &__content {
+    @include flex-row(calc(var(--indent-base) / 2), center, flex-start)
+  }
+
+  &__action_button {
+    @include clear-button-defaults;
+    @include flex-row(0, center, center);
+    @include rect(24px, 24px);
+    color: var(--color-text-secondary);
+    transition: color 200ms;
+
+    &--active {
+      color: var(--color-text-primary)
+    }
+  }
+
+}

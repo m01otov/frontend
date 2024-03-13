@@ -1,0 +1,11 @@
+@import '../../../../assets/mixins/components-props.mixin';
+
+.svg_ellipse_renderable {
+  @include rendarable-commons;
+  @include transform-component;
+  @include dimensions-component;
+
+  ellipse {
+    fill: var(--color);
+  }
+}

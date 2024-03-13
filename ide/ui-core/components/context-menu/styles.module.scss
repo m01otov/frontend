@@ -1,0 +1,103 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/effects.mixins';
+
+.context_menu,
+.context_menu__submenu_items {
+  @include flex-column(0, stretch);
+  position: absolute;
+  min-width: 224px;
+  background-color: var(--color-background-darker);
+  border-radius: calc(var(--radius-base) - 2px);
+  @include shadow;
+  padding: 4px;
+}
+
+.context_menu {
+  top: var(--position-y);
+  left: var(--position-x);
+
+  &__group {
+    @include flex-column(0, stretch);
+    padding: calc(var(--indent-base) / 4) 0;
+    position: relative;
+
+    &:not(:last-of-type):after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: -4px;
+      width: calc(100% + 4px);
+      height: 1px;
+      background-color: var(--color-background-lighter);;
+    }
+
+    &:first-of-type {
+      padding-top: 0;
+    }
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+
+  &__item {
+    @include flex-row(8px);
+    @include clear-button-defaults;
+    font-size: .8rem;
+    font-weight: 500;
+    padding: calc(var(--indent-base) / 4) calc(var(--indent-base) / 2);
+    color: var(--color-text-secondary);
+    border-radius: calc(var(--radius-base) / 3);
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-background-lighter);
+      color: var(--color-text-primary);
+    }
+    
+    &:disabled {
+      opacity: .5;
+    }
+  }
+
+  &__submenu {
+    position: relative;
+
+    .context_menu__item {
+      justify-content: space-between;
+    }
+
+    &:hover {
+      > .context_menu__item {
+        background-color: var(--color-background-lighter);
+        color: var(--color-text-primary);
+        svg {
+          fill: var(--color-text-primary);
+        }
+      }
+    }
+
+    &_items {
+      top: var(--position-y);
+      left: inherit;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: -4px;
+        bottom: 0;
+        left: -4px;
+        z-index: -1;
+      }
+
+      &-right {
+        right: -4px;
+        transform: translateX(100%);
+      }
+      &-left {
+        left: -4px;
+        transform: translateX(-100%);
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.transform_tool {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--width);
+  height: var(--height);
+  outline: 1px solid var(--color-accent-primary);
+  outline-offset: var(--outline-offset);
+  cursor: move;
+
+  &__control {
+    @include clear-button-defaults();
+    @include square(10px);
+    position: absolute;
+    background-color:  var(--color-text-primary);
+    border: 2px solid var(--color-accent-primary);
+
+    &--tl {
+      top: -7px;
+      left: -7px;
+      cursor: nw-resize;
+    }
+
+    &--tr {
+      top: -7px;
+      right: -7px;
+      cursor: ne-resize;
+    }
+
+    &--br {
+      bottom: -7px;
+      right: -7px;
+      cursor: se-resize;
+    }
+
+    &--bl {
+      bottom: -7px;
+      left: -7px;
+      cursor: sw-resize;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import '../../assets/styles/mixins/effects.mixins';
+
+.error {
+  position: absolute;
+  z-index: 1;
+  box-sizing: border-box;
+  padding: calc(var(--indent-base) / 4) calc(var(--indent-base) / 2);
+  top: var(--position-y);
+  left: calc(var(--position-x) - 1px);
+  width: calc(var(--width) + 2px);
+  background-color: var(--color-danger);
+  color: var(--color-text-primary);
+  font-size: .75rem;
+  @include shadow;
+}

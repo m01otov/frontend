@@ -1,0 +1,18 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.screen_editor_outliner {
+  &__header {
+    @include flex-row(8px, center, flex-start);
+    color: var(--color-text-primary);
+    background-color: var(--color-foreground);
+    padding: calc(var(--indent-base) / 1.6) calc(var(--indent-base) * 1.25);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+  }
+
+  &__content {
+    height: 100%;
+    background-color: var(--color-background-lighter);
+  }
+}

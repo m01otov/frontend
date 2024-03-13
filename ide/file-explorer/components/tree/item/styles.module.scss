@@ -1,0 +1,29 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.file_explorer__item_content {
+  @include flex-row(8px, center);
+
+  &_icon {
+    @include flex-row(0, center, center);
+    color: var(--color-text-secondary);
+
+    &--js { color: var(--color-asset-js) }
+    &--css { color: var(--color-asset-css) }
+    &--wgt { color: var(--color-asset-widget) }
+    &--scrn { color: var(--color-asset-screen) }
+  }
+}
+
+.file_explorer__item {
+  &--over {
+    background-color: var(--color-foreground-lighter);
+  }
+}
+
+.draggable_preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1
+}

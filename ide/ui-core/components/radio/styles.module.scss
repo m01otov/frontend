@@ -1,0 +1,45 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/shape.mixins';
+@import '../../assets/styles/mixins/state.mixins';
+
+.radio {
+  @include flex-row(8px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: .03rem;
+  color: var(--color-text-secondary);
+  user-select: none;
+
+  @include disabled-div {
+    opacity: .5;
+  }
+
+  input[type="radio"] {
+    @include circle(24px);
+    appearance: none;
+    background-color: var(--color-background);
+    margin: 0;
+    display: grid;
+    place-content: center;
+    outline: none;
+    transition: background-color 200ms;
+
+    &::before {
+      content: "";
+      @include circle(16px);
+      transform: scale(0);
+      transition: transform 120ms ease-in-out;
+      background-color: var(--color-accent-primary);
+    }
+
+    &:disabled {
+      opacity: .5;
+    }
+
+    &:checked {
+      &:before { transform: scale(1) }
+    }
+
+  }
+}

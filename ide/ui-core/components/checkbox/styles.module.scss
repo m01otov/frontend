@@ -1,0 +1,49 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/shape.mixins';
+@import '../../assets/styles/mixins/state.mixins';
+
+.checkbox {
+  @include flex-row(8px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: .03rem;
+  color: var(--color-text-secondary);
+  user-select: none;
+
+  @include disabled-div {
+    opacity: .5;
+  }
+
+  input[type="checkbox"] {
+    @include circle(24px);
+    appearance: none;
+    border-radius: var(--radius-base);
+    background-color: var(--color-background);
+    margin: 0;
+    display: grid;
+    place-content: center;
+    outline: none;
+    transition: background-color 200ms;
+
+    &::before {
+      content: "";
+      @include square(12px);
+      transform: scale(0);
+      transition: transform 120ms ease-in-out;
+      background: url(./checkmark.svg);
+      color: white;
+      background-size: contain;
+    }
+
+    &:disabled {
+      opacity: .5;
+    }
+
+    &:checked {
+      background: var(--color-accent-primary);
+      &:before { transform: scale(1) }
+    }
+
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@lukoil/scad-ide-canvas",
+  "version": "0.7.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@3.2.4",
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "@types/uuid": "^9.0.2",
+    "classnames": "^2.3.2",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^3.4.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-use": "^17.4.0",
+    "typed-signals": "^2.5.0",
+    "typescript": "^4.6.4",
+    "uuid": "^9.0.0"
+  },
+  "dependencies": {
+    "@lukoil/scad-ide-ui-core": "workspace:^",
+    "@lukoil/scad-runtime-core": "workspace:^"
+  }
+}

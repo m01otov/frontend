@@ -1,0 +1,14 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.size_indicator {
+  @include flex-row(2px, center, center);
+  border-radius: calc(var(--radius-base) / 3);
+  padding: 0 calc(var(--indent-base) / 4);
+  background-color: var(--color-accent-primary);
+  font-size: .7rem;
+  font-weight: 500;
+  position: absolute;
+  top: calc(100% + calc(var(--indent-base) / 3));
+  left: 50%;
+  transform: translateX(-50%);
+}

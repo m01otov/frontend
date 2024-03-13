@@ -1,0 +1,23 @@
+@import '../../assets/styles/mixins/layout.mixins';
+
+.panel {
+  @include flex-column(0, stretch);
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--color-foreground);
+  
+  &_header {
+    user-select: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &_content {
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  &_footer {
+    flex-shrink: 0;
+  }
+}

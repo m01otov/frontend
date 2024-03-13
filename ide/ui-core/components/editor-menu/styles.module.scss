@@ -1,0 +1,25 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins.scss';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/effects.mixins.scss';
+
+.editor_menu_button {
+  @include clear-button-defaults;
+  color: var(--color-background-darker);
+  transition: color 300ms;
+  
+  &--active {
+    color: var(--color-accent-primary)
+  }
+}
+
+.editor_menu {
+  top: var(--position-y);
+  left: var(--position-x);
+
+  @include flex-column(0, stretch);
+  position: absolute;
+  min-width: 224px;
+  background-color: var(--color-background-darker);
+  border-radius: calc(var(--radius-base) - 2px);
+  @include shadow;
+  padding: 4px;
+}

@@ -1,0 +1,31 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins.scss';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/grid.mixins.scss';
+
+.header {
+  @include flex-row(0px,center, space-between);
+
+  &__toolbar {
+    @include flex-row(16px);
+  }
+}
+
+.container {
+  @include flex-column(24px, normal);
+  padding: calc(var(--indent-base)) calc(var(--indent-base) * 1.5);
+}
+
+.controls {
+  @include flex-row(16px, $justify: end);
+}
+
+.content {
+  @include make-grid(5, $gap: 24px)
+}
+
+.create_form {
+  width: 350px;
+
+  &__buttons {
+    @include flex-row(8px, $justify: end);
+  }
+}

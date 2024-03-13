@@ -1,0 +1,6 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.logo {
+  @include flex-row(0, center, center);
+}

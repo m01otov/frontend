@@ -1,0 +1,27 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.file_explorer__toolbar {
+  @include flex-row(8px, center);
+  color: var(--color-text-primary);
+  background-color: var(--color-foreground);
+  padding: calc(var(--indent-base) / 1.6) calc(var(--indent-base) * 1.25);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  user-select: none;
+  
+  &_actions {
+    @include flex-row(16px, center, center);
+    margin-left: auto;
+    
+    &_item {
+      @include clear-button-defaults;
+      color: var(--color-text-secondary);
+      transition: color 200ms;
+
+      &:hover {
+        color: var(--color-text-primary);
+      }
+    }
+  }
+}

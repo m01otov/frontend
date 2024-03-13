@@ -1,0 +1,9 @@
+.instance_widget_renderable {
+  position: absolute;
+  user-select: none;
+  top: var(--position-y);
+  left: var(--position-x);
+  width: var(--width);
+  height: var(--height);
+  color: white;
+}

@@ -1,0 +1,8 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.file_explorer {
+  @include flex-column(0, stretch);
+  height: 100%;
+  background-color: var(--color-foreground);
+  border-left: 1px solid var(--color-foreground-lighter);
+}

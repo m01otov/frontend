@@ -1,0 +1,36 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.screen_editor_details {
+  @include flex-row(0, stretch);
+  
+  &_navigation {
+    flex: 0 0 36px;
+    @include flex-column(0, stretch);
+    background-color: var(--color-background-lighter);
+
+    &__item {
+      @include clear-button-defaults;
+      @include flex-row(0, center, center);
+      height: 36px;
+      border-top-left-radius: var(--radius-base);
+      border-bottom-left-radius: var(--radius-base);
+      color: var(--color-text-secondary);
+
+      &:first-of-type {
+        border-top-left-radius: none;
+      }
+
+      &--active {
+        background-color: var(--color-foreground);
+        color: var(--color-text-primary);
+      }
+    }
+  } 
+
+  &_content {
+    overflow-y: auto;
+    flex: 1;
+    background-color: var(--color-foreground);
+    padding: calc(var(--indent-base) / 2) var(--indent-base);
+  }
+}

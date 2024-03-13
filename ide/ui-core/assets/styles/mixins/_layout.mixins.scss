@@ -1,0 +1,50 @@
+@mixin clear-button-defaults() {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+@mixin clear-input-defaults() {
+  background: none;
+  border: none;
+  outline: none;
+  padding: 0;
+}
+
+@mixin inline-grid-centering($gap: 0px, $align: center, $justify: center) {
+  display: inline-grid;
+  grid-auto-flow: column;
+  align-items: $align;
+  justify-content: $justify;
+  grid-gap: $gap;
+}
+
+@mixin flex-row($gap: 0px, $align: center, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap
+}
+
+@mixin flex-column($gap: 0px, $align: center, $justify: flex-start) {
+  display: flex;
+  flex-direction: column;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap
+}
+
+@mixin fill($posiiton: relative) {
+  position: $posiiton;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

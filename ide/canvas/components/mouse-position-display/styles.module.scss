@@ -1,0 +1,18 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.mouse_position_display {
+  @include flex-row(calc(var(--indent-base) / 2), center, center);
+  position: absolute;
+  font-size: .8rem;
+  color: var(--color-text-secondary);
+  user-select: none;
+
+  &--placement-x {
+    &-left { left: var(--placement-offset-x) }
+    &-right { right: var(--placement-offset-x) }
+  }
+  &--placement-y {
+    &-top { top: var(--placement-offset-y) }
+    &-bottom { bottom: var(--placement-offset-y) }
+  }
+}

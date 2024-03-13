@@ -1,0 +1,8 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.toolbar {
+  @include flex-row(var(--indent-base), center, flex-start);
+  padding: 0 calc(var(--indent-base) / 2);
+  background-color: var(--color-foreground);
+  color: var(--color-background-darker)
+}

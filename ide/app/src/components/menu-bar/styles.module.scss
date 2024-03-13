@@ -1,0 +1,11 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.menu_bar {
+  @include flex-column(0, stretch);
+  background-color: var(--color-background-lighter);
+  box-shadow: -8px 0px 5px -4px rgba(0, 0, 0, 0.05) inset;
+
+  & > :first-child {
+    height: 64px;
+  }
+}

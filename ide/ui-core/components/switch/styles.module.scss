@@ -1,0 +1,48 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/shape.mixins';
+@import '../../assets/styles/mixins/state.mixins';
+
+.switch {
+  @include flex-row(8px);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  letter-spacing: .03rem;
+  color: var(--color-text-secondary);
+  user-select: none;
+  position: relative;
+
+  @include disabled-div {
+    opacity: .5;
+  }
+  
+  &:before {
+    content: "";
+    @include rect(48px, 24px);
+    border-radius: 12px;
+    background-color: var(--color-background);
+  }
+
+  &_knob {
+    content: "";
+    @include circle(16px);
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: var(--color-foreground-lighter);
+    transition: transform 200ms;
+  }
+
+  input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    visibility: hidden;
+
+    &:checked ~ .switch_knob {
+      transform: translateX(calc(100% + 8px));
+      background-color: var(--color-accent-primary);
+    }
+  }
+}

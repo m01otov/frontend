@@ -1,0 +1,22 @@
+{
+  "name": "@lukoil/scad-runtime-request",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@3.2.4",
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "injectx": "^1.0.4",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "query-string": "^8.1.0",
+    "typed-signals": "^2.5.0"
+  }
+}

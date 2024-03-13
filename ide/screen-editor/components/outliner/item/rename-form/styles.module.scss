@@ -1,0 +1,18 @@
+.outliner_rename_form {
+  width: 100%;
+  height: 100%;
+
+  &__input {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-background-darker);
+    border: none;
+    padding: 0 calc(var(--indent-base) / 2);
+    outline: 1px solid var(--color-accent-primary);
+    color: var(--color-text-primary);
+    
+    &--error {
+      outline-color: var(--color-danger);
+    }
+  }
+}

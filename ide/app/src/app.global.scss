@@ -1,0 +1,76 @@
+@import 'normalize.scss/normalize';
+
+@import '@lukoil/scad-ide-ui-core/assets/styles/global';
+@import '@lukoil/scad-ide-ui-core/assets/styles/variables/geometry.variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-size: 16px;
+  line-height: 1.25rem;
+  position: fixed;
+}
+
+main {
+  z-index: 0;
+}
+
+#scad-ide {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  grid-template-rows: 1fr;
+  height: 100%;
+}
+
+.gutter {
+  background-color: var(--color-foreground);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  position: relative;
+
+  &-horizontal {
+    cursor: col-resize;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1px;
+      height: 100%;
+      transform: translateX(-50%);
+      background-color: var(--color-background-darker);
+    }
+  }
+
+  &-vertical {
+    cursor: row-resize;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      transform: translateY(-50%);
+      background-color: var(--color-background-darker);
+    }
+  }
+
+  &:hover:after {
+    background-color: var(--color-accent-primary-on);
+    opacity: .5;
+  }
+}

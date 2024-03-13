@@ -1,0 +1,9 @@
+.tool_frame {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: var(--width);
+  height: var(--height);
+  outline: 1px solid var(--color-accent-primary);
+  outline-offset: var(--outline-offset);
+}

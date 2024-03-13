@@ -1,0 +1,49 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.property {
+  @include flex-row(8px, center);
+  width: 100%;
+  color: var(--color-text-secondary);
+  background-color: var(--color-background);
+  font-size: 0.75rem;
+  padding: calc(var(--indent-base) / 2) var(--indent-base);
+  border-radius: var(--radius-base);
+
+  &_icon {
+    @include flex-row(0, center, center);
+    color: var(--color-asset-js);
+  }
+
+  &--outline {
+    outline: 1px solid var(--color-accent-primary);
+  }
+
+  &--over {
+    background-color: var(--color-foreground-lighter);
+  }
+}
+
+.property_grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  row-gap: calc(var(--indent-base) / 2);
+  column-gap: var(--indent-base);
+
+  &__title {
+    color: var(--color-text-primary);
+    font-size: 0.85rem;
+    font-weight: 400;
+    
+  }
+
+  &__discription {
+    color: var(--color-text-secondary);
+    font-size: 0.75rem;
+  }
+}
+
+.control {
+  &_input {
+    align-self: start;
+  }
+}

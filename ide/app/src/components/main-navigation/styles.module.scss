@@ -1,0 +1,24 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.main_navigation {
+  flex: 1;
+  @include flex-column(var(--indent-base), center);
+  padding: calc(var(--indent-base) / 1.45);
+
+  &__item {
+    @include flex-row(0, center, center);
+    @include square(calc(var(--indent-base) * 2.625));
+    color: var(--color-text-secondary);
+    border-radius: var(--radius-base);
+    text-decoration: none;
+    user-select: none;
+    outline: none;
+    transition: background-color 200ms, color 200ms;
+    
+    &--active {
+      background-color: var(--color-accent-primary);
+      color: white;
+    }
+  }
+}

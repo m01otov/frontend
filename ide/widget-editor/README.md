@@ -1,0 +1,1 @@
+### @lukoil/scad-ide-widget-editor

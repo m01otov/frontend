@@ -1,0 +1,93 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/shape.mixins';
+
+.tree {
+  &_container {
+    width: inherit;
+    height: inherit;
+    @include flex-column(0, stretch);
+    overflow-y: auto;
+
+    &--with-indent-lines {
+      .tree_node_sub_tree {
+        position: relative;
+  
+        &:after {
+          content: '';
+          position: absolute;
+          z-index: 0;
+          top: 0;
+          left: -1px;
+          height: 100%;
+          width: 1px;
+          border-right: 1px dotted var(--color-text-secondary);
+          transform: translateX(calc(var(--indent-base) * var(--deepnes) + calc(var(--indent-base) / 2)));
+        }
+      }
+    }
+  }
+
+  &_node {
+    @include flex-column(0, stretch);
+    
+    &_summary {
+      @include flex-row(calc(var(--indent-base) / 2), stretch);
+      padding: 
+        calc(var(--indent-base) / 4)
+        var(--indent-base)
+        calc(var(--indent-base) / 4)
+        calc(var(--indent-base) * var(--deepnes));
+        
+      position: relative;
+      user-select: none;
+      color: var(--color-text-primary);
+      border: 1px solid transparent;
+      transition: background-color 200ms, border-color 200ms;
+
+      &:hover:not(&--active) {
+        cursor: pointer;
+        color: var(--color-text-primary);
+        background-color: rgba(24, 28, 33, .4);
+      }
+  
+      &--active {
+        border-color: rgba(92, 71, 242, .4);
+        background-color: rgba(24, 28, 33, .4);
+      }
+
+      &__toggle_childs_btn {
+        @include clear-button-defaults();
+        @include flex-row(0, center, center);
+        @include rect(var(--indent-base), calc(var(--indent-base) * 1.5));
+        color: var(--color-text-secondary);
+        transition: color 200ms, transform 200ms;
+
+        &--fold {
+          transform: rotate(-180deg);
+        }
+
+        &:disabled {
+          visibility: hidden;
+        }
+      }
+
+      &__content {
+        flex: 1;
+        display: grid;
+        grid-template-columns: 1fr;
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: currentColor;
+      }
+
+      &__actions {
+        @include flex-row(0, center, flex-end);
+        color: var(--color-text-secondary);
+      }
+    }
+
+    &_sub_tree {
+      @include flex-column(0, stretch);
+    }
+  }
+}

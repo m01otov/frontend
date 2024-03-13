@@ -1,0 +1,12 @@
+@import '../../../../assets/mixins/components-props.mixin';
+
+.svg_line_renderable {
+  @include rendarable-commons;
+  @include transform-component;
+  @include dimensions-component;
+
+  path {
+    stroke: var(--stroke);
+    stroke-width: var(--stroke-width);
+  }
+}

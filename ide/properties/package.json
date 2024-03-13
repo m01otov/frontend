@@ -1,0 +1,25 @@
+{
+  "name": "@lukoil/scad-ide-properties",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@3.2.4",
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "inversify-react": "^1.1.0",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^3.4.3",
+    "react": "^18.2.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "@lukoil/scad-ide-ui-core": "workspace:^",
+    "@lukoil/scad-runtime-core": "workspace:^"
+  }
+}

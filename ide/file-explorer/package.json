@@ -1,0 +1,32 @@
+{
+  "name": "@lukoil/scad-file-explorer",
+  "version": "1.0.5",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "main": "./index.tsx",
+  "module": "./index.tsx",
+  "license": "UNLICENSED",
+  "packageManager": "yarn@3.2.4",
+  "engines": {
+    "node": ">=16"
+  },
+  "peerDependencies": {
+    "injectx": "^1.0.4",
+    "mobx": "^6.10.0",
+    "mobx-react-lite": "^3.4.3",
+    "react": "^18.2.0",
+    "react-dnd": "*",
+    "typed-signals": "^2.5.0",
+    "typescript": "^4.6.4",
+    "yup": "^1.3.2"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "3.3.2",
+    "@lukoil/scad-ide-notifications": "workspace:^",
+    "@lukoil/scad-ide-ui-core": "workspace:^",
+    "@lukoil/scad-runtime-core": "workspace:^",
+    "@lukoil/scad-runtime-request": "workspace:^",
+    "react-hook-form": "7.49.2"
+  }
+}

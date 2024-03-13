@@ -1,0 +1,76 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/shape.mixins';
+
+.tools_menu {
+  @include flex-row(0, stretch, center);
+  align-self: stretch;
+  margin: 0 auto;
+
+  &__group {
+    @include flex-row(0, center, flex-start);
+    color: var(--color-text-secondary);
+    transition: background-color 200ms, color 200ms;
+
+    &:hover:not(&--active):not(:disabled) {
+      color: var(--color-text-primary);
+      background-color: var(--color-background-lighter);
+    }
+
+    &--active {
+      color: var(--color-text-primary);
+      background-color: var(--color-accent-primary);
+    }
+  
+    &:disabled {
+      opacity: .5;
+    }
+
+    &_fold_button {
+      @include clear-button-defaults();
+      height: 100%;
+      @include flex-row(0, center, center);
+      padding: 0 calc(var(--indent-base) / 2) 0 calc(var(--indent-base) / 4);
+      transition: transform 200ms;
+
+      &:hover {
+        transform: translateY(2px);
+      }
+    }
+
+    & > button:first-of-type {
+      padding: 0 calc(var(--indent-base) / 2) !important;
+    }
+  }
+
+  &__item {
+    height: 40px;
+    @include clear-button-defaults();
+    @include flex-row(calc(var(--indent-base) / 2), center, center);
+    padding: 0 calc(var(--indent-base) / 1.23);
+    color: var(--color-text-secondary);
+    transition: background-color 200ms, color 200ms;
+  
+    &:hover:not(&--active):not(:disabled) {
+      color: var(--color-text-primary);
+      background-color: var(--color-background-lighter);
+    }
+  
+    &--active {
+      color: var(--color-text-primary);
+      background-color: var(--color-accent-primary);
+    }
+
+    &--inline {
+      padding: calc(var(--indent-base) / 2);
+      height: auto;
+      justify-content: flex-start;
+      font-size: .75rem;
+      font-weight: 500;
+    }
+  
+    &:disabled {
+      opacity: .5;
+    }
+  }
+
+}

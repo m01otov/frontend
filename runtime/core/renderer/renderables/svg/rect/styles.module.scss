@@ -1,0 +1,12 @@
+@import '../../../../assets/mixins/components-props.mixin';
+
+.svg_rect_renderable {
+  @include rendarable-commons;
+  @include transform-component;
+  @include dimensions-component;
+  @include corner-radius-component;
+
+  rect {
+    fill: var(--color);
+  }
+}

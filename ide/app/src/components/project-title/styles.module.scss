@@ -1,0 +1,15 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins.scss';
+
+.project_title {
+  @include flex-row(8px, center);
+  color: var(--color-text-primary);
+  background-color: var(--color-foreground);
+  padding: calc(var(--indent-base) / 1.6) calc(var(--indent-base) * 1.25);
+  font-size: .88rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+
+  svg {
+    color: var(--color-text-secondary);
+  }
+}

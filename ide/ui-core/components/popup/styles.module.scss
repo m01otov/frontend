@@ -1,0 +1,52 @@
+@import '../../assets/styles/mixins/layout.mixins';
+@import '../../assets/styles/mixins/shape.mixins';
+@import '../../assets/styles/mixins/effects.mixins';
+
+.popup {
+  @include flex-column(0, stretch);
+  position: absolute;
+  min-width: 240px;
+  min-height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  height: auto;
+  margin: auto;
+  z-index: 1;
+  background-color: var(--color-background-lighter);
+  border-radius: var(--radius-base);
+  padding: calc(var(--indent-base) / 2);
+  @include shadow;
+
+  &_header, &_footer, &_content {
+    padding: calc(var(--indent-base) / 2);
+  }
+
+  &_header, &_footer {
+    flex-shrink: 0;
+  }
+
+  &_header {
+    @include flex-row(var(--indent-base), center, space-between);
+    padding-bottom: var(--indent-base);
+
+    &__content_slot {
+      flex: 1;
+    }
+
+    button {
+      @include clear-button-defaults;
+      @include square(24px);
+      @include flex-row(0, center, center);
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &_content {
+    flex: 1;
+  }
+
+  &_footer {
+    padding-top: var(--indent-base);
+  }
+}

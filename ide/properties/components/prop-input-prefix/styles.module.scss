@@ -1,0 +1,8 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.property_input_prefix {
+  @include flex-row(0, center, center);
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--color-text-secondary)
+}

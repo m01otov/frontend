@@ -1,0 +1,13 @@
+@import '../../../../assets/mixins/components-props.mixin';
+
+.html_label_renderable {
+  @include rendarable-commons;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include transform-component;
+  @include dimensions-component;
+  color: var(--text-color);
+  font-size: var(--text-size);
+  line-height: var(--text-line-height);
+}

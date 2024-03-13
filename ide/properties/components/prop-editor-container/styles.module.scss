@@ -1,0 +1,21 @@
+@import '@lukoil/scad-ide-ui-core/assets/styles/mixins/layout.mixins';
+
+.prop_editor_container {
+  @include flex-column(0, stretch, flex-start);
+
+  &__title {
+    color: var(--color-text-primary);
+    font-size: .85rem;
+    font-weight: 400;
+    padding: var(--indent-base) calc(var(--indent-base) / 2);
+    user-select: none;
+  }
+
+  &__content {
+    @include flex-column(var(--indent-base), stretch, flex-start);
+
+    &_row {
+      @include flex-row(var(--indent-base), flex-start, stretch);
+    }
+  }
+}
