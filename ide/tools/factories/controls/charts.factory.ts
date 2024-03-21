@@ -73,7 +73,7 @@ export const chartsFactory: TEntityFactory<TchartsFactoryProps> = props => [
     name: 'График',
     isLocked: false,
     isVisible: true,
-    icon: EEditorTool.BUTTON
+    icon: EEditorTool.CHART
   }),
 
   scriptComponent({ id: null, name: null })
