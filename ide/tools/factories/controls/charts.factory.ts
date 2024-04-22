@@ -8,32 +8,30 @@ import {
   cornerRadiusComponent,
   dimensionsComponent,
   editorDataComponent,
-  fillComponent,
   elementComponent,
+  fillComponent,
   parentComponent,
-  transformComponent,
-  textComponent,
-  strokeComponent,
-  scriptComponent
+  scriptComponent,
+  transformComponent
 } from '@lukoil/scad-runtime-core';
 import { EEditorTool } from '../../enums';
 
-type TchartsFactoryProps = {
+type TCanvasFactoryProps = {
   parent: TParentComponentProps;
 
-  transform: TTransformComponentProps
+  transform: TTransformComponentProps;
 
   dimensions: TDimensionsComponentProps;
 }
 
-export const chartsFactory: TEntityFactory<TchartsFactoryProps> = props => [
+export const canvasFactory: TEntityFactory<TCanvasFactoryProps> = props => [
   parentComponent({
     id: props.parent?.id || null
   }),
 
   elementComponent<'html'>({
     type: 'html',
-    shape: 'button',
+    shape: 'div',
     canHaveChildren: true
   }),
 
@@ -44,33 +42,18 @@ export const chartsFactory: TEntityFactory<TchartsFactoryProps> = props => [
   dimensionsComponent(props.dimensions),
 
   cornerRadiusComponent({
-    values: [5, 5, 5, 5],
+    values: [0, 0, 0, 0],
     mixed: false,
-  }),
-
-  textComponent({
-    color: '#000',
-    opacity: 1,
-    text: 'График',
-    size: 16,
-    lineHeight: 16
   }),
 
   fillComponent({
     type: 'solid',
-    color: '#cfcfcf',
+    color: '#f9f9f9',
     opacity: 1
   }),
 
-  strokeComponent({
-    color: '#000',
-    opacity: 1,
-    width: 1,
-    style: 'solid'
-  }),
-
   editorDataComponent({
-    name: 'График',
+    name: 'Canvas',
     isLocked: false,
     isVisible: true,
     icon: EEditorTool.CHART

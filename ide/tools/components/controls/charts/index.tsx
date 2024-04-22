@@ -4,14 +4,12 @@ import { type TRectangle } from '@lukoil/scad-runtime-core';
 import type { TToolBaseProps } from '../../../types';
 import { useMouseDragRect } from '../../../hooks/mouse-drag-rect.hook';
 import { ToolFrame } from '../../helpers/frame';
-import { SizeIndicator } from '../../helpers/size-indicator';
-import { buttonFactory } from '../../../factories/';
+import { SizeIndicator } from '../../../components/helpers/size-indicator';
+import { canvasFactory } from '../../../factories';
 
-import styles from './styles.module.scss';
+type TDrawChartsToolProps = {} & TToolBaseProps;
 
-type TDrawButtonToolProps = {} & TToolBaseProps;
-
-export const DrawChartsTool: FC<TDrawButtonToolProps> = ({
+export const DrawChartsTool: FC<TDrawChartsToolProps> = ({
   target,
   onComplete
 }) => {
@@ -24,7 +22,7 @@ export const DrawChartsTool: FC<TDrawButtonToolProps> = ({
 
     const elementRect = element.getBoundingClientRect();
 
-    const entityComponentsData = buttonFactory({
+    const entityComponentsData = canvasFactory({
       parent: {
         id: null
       },
@@ -52,11 +50,6 @@ export const DrawChartsTool: FC<TDrawButtonToolProps> = ({
         target={target}
         rect={rect}
         shouldRender={isDrag}>
-        <button
-          className={styles.draw_button_tool__preview}
-          disabled>
-     
-        </button>
       </ToolFrame>
 
       <SizeIndicator
@@ -68,5 +61,6 @@ export const DrawChartsTool: FC<TDrawButtonToolProps> = ({
   );
 
 }
+
 
 DrawChartsTool.displayName = 'DrawChartsTool';

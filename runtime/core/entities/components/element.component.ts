@@ -3,7 +3,7 @@ import type { IComponent, TComponentFactoryResult } from '../component';
 export const ELEMENT_COMPONENT = Symbol.for('element');
 
 export type TElementShapeMap = {
-  html: 'div' | 'label' | 'input' | 'button';
+  html: 'div' | 'label' | 'input' | 'button' | 'canvas';
 
   svg: 'rect' | 'ellipse' | 'path';
 

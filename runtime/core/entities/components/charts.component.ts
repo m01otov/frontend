@@ -29,7 +29,7 @@ export interface ITextComponent extends IComponent {
   serialize: () => [string, TChartsComponentProps];
 }
 
-export const textComponent: TComponentFactory<
+export const canvasComponent: TComponentFactory<
   ITextComponent,
   TChartsComponentProps
 > = props => [TEXT_COMPONENT, {
