@@ -8,6 +8,7 @@ import { HTMLContainerRendarable } from './html/container';
 import { HTMLLabelRendarable } from './html/label';
 import { HTMLInputRendarable } from './html/input';
 import { HTMLButtonRendarable } from './html/button';
+import {HTMLCanvasRendarable} from './html/canvas'
 import { InstanceWidgetRendarable } from './instance/widget';
 
 export const SVG_RENDERABLES_MAP: Record<string, FC<any> | null> = {
@@ -21,6 +22,8 @@ export const HTML_RENDERABLES_MAP: Record<string, FC<any> | null> = {
   'label': HTMLLabelRendarable,
   'input': HTMLInputRendarable,
   'button': HTMLButtonRendarable,
+  'canvas': HTMLCanvasRendarable
+
 }
 
 export const INSTANCE_RENDERABLES_MAP: Record<string, FC<any> | null> = {

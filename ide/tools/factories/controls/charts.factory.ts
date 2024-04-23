@@ -31,7 +31,7 @@ export const canvasFactory: TEntityFactory<TCanvasFactoryProps> = props => [
 
   elementComponent<'html'>({
     type: 'html',
-    shape: 'div',
+    shape: 'canvas',
     canHaveChildren: true
   }),
 
@@ -42,13 +42,13 @@ export const canvasFactory: TEntityFactory<TCanvasFactoryProps> = props => [
   dimensionsComponent(props.dimensions),
 
   cornerRadiusComponent({
-    values: [0, 0, 0, 0],
+    values: [5, 5, 5, 5],
     mixed: false,
   }),
 
   fillComponent({
     type: 'solid',
-    color: '#f9f9f9',
+    color: '#aaaa',
     opacity: 1
   }),
 

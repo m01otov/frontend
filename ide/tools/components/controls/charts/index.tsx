@@ -62,5 +62,4 @@ export const DrawChartsTool: FC<TDrawChartsToolProps> = ({
 
 }
 
-
 DrawChartsTool.displayName = 'DrawChartsTool';

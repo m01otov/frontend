@@ -68,7 +68,7 @@ export const WidgetEditorContextProvider: FC<TWidgetEditorContextProviderProps> 
         },
         [EEditorTool.CHART]: {
           category: EEditorToolCategory.ADVANCED,
-          displayName: 'График',
+          displayName: 'Canvas',
           component: DrawChartsTool
         }
       },
