@@ -9,7 +9,7 @@ type THTMLInputRendarableProps = TRenderableProps & {
   isEditor: boolean;
 };
 
-export const HTMLCanvasRendarable = observer(forwardRef<HTMLDivElement, THTMLInputRendarableProps>(({
+export const HTMLCanvasRendarable = observer(forwardRef<HTMLCanvasElement, THTMLInputRendarableProps>(({
   entity,
   isEditor
 }, ref) => {

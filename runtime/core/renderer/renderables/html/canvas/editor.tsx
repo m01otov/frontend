@@ -7,7 +7,7 @@ import { type IEditorDataComponent, EDITOR_DATA_COMPONENT } from '../../../../en
 import { getComponentFrom } from '../../../../entities/component';
 import { HTMLCanvasRender } from './render';
 
-export const HTMLEditoCanvasRendarable = observer(forwardRef<HTMLDivElement, TRenderableProps>(({
+export const HTMLEditoCanvasRendarable = observer(forwardRef<HTMLCanvasElement, TRenderableProps>(({
   entity,
 }, ref) => {
 

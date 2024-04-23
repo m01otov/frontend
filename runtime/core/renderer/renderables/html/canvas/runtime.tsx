@@ -11,7 +11,7 @@ import { type IScriptComponent, SCRIPT_COMPONENT } from '../../../../entities/co
 import { getComponentFrom } from '../../../../entities/component';
 import { HTMLCanvasRender } from './render';
 
-export const HTMLRuntimeCanvasRendarable = observer(forwardRef<HTMLDivElement, TRenderableProps>(({
+export const HTMLRuntimeCanvasRendarable = observer(forwardRef<HTMLCanvasElement, TRenderableProps>(({
   entity,
 }, ref) => {
   const httpService = useInjection<IHttpService>(HTTP_SERVICE_TOKEN);
