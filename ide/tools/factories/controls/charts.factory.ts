@@ -53,7 +53,7 @@ export const canvasFactory: TEntityFactory<TCanvasFactoryProps> = props => [
   }),
 
   editorDataComponent({
-    name: 'Canvas',
+    name: 'График',
     isLocked: false,
     isVisible: true,
     icon: EEditorTool.CHART
