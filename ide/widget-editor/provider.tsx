@@ -6,7 +6,7 @@ import { HTTP_SERVICE_TOKEN } from '@lukoil/scad-runtime-request';
 import { NOTIFICATION_CONTEXT_TOKEN } from '@lukoil/scad-ide-notifications';
 import { createWidgetEditorContext } from './context';
 import { IWidgetEditorContext } from './interfaces';
-import { SelectTool, DrawLineTool, DrawRectTool, DrawEllipseTool, EEditorTool, EEditorToolCategory, DrawContainerTool, DrawTextTool, DrawInputTool, DrawButtonTool } from '@lukoil/scad-ide-tools';
+import { SelectTool, DrawLineTool, DrawRectTool, DrawEllipseTool, EEditorTool, EEditorToolCategory, DrawContainerTool, DrawChartsTool, DrawTextTool, DrawInputTool, DrawButtonTool } from '@lukoil/scad-ide-tools';
 
 const WindgetEditorContext = createContext<IWidgetEditorContext>({} as IWidgetEditorContext);
 
@@ -65,6 +65,11 @@ export const WidgetEditorContextProvider: FC<TWidgetEditorContextProviderProps> 
           category: EEditorToolCategory.ADVANCED,
           displayName: 'Кнопка',
           component: DrawButtonTool
+        },
+        [EEditorTool.CHART]: {
+          category: EEditorToolCategory.ADVANCED,
+          displayName: 'График',
+          component: DrawChartsTool
         }
       },
       defaultActiveToolId: EEditorTool.SELECT,

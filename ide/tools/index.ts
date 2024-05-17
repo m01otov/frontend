@@ -9,6 +9,8 @@ export { DrawContainerTool } from './components/controls/container';
 export { DrawTextTool } from './components/controls/text';
 export { DrawInputTool } from './components/controls/input';
 export { DrawButtonTool } from './components/controls/button';
+export { DrawChartsTool } from './components/controls/charts';
+
 
 export * from './factories';
 

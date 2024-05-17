@@ -12,5 +12,6 @@ export enum EEditorTool {
   TEXT = 'TEXT',
   INPUT = 'INPUT',
   BUTTON = 'BUTTON',
-  WIDGET_INSTANCE = 'WIDGET'
+  WIDGET_INSTANCE = 'WIDGET',
+  CHART = 'CHART'
 }

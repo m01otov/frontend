@@ -6,7 +6,7 @@ import { NOTIFICATION_CONTEXT_TOKEN } from '@lukoil/scad-ide-notifications';
 import { inject } from '@lukoil/scad-runtime-core';
 import type { IScreenEditorContext } from './interfaces';
 import { createScreenEditorContext } from './context';
-import { DrawButtonTool, DrawContainerTool, DrawEllipseTool, DrawInputTool, DrawLineTool, DrawRectTool, DrawTextTool, EEditorTool, EEditorToolCategory, SelectTool } from '@lukoil/scad-ide-tools';
+import { DrawButtonTool, DrawContainerTool,DrawChartsTool, DrawEllipseTool, DrawInputTool, DrawLineTool, DrawRectTool, DrawTextTool, EEditorTool, EEditorToolCategory, SelectTool } from '@lukoil/scad-ide-tools';
 
 const ScreenEditorContext = createContext<IScreenEditorContext>({} as IScreenEditorContext);
 
@@ -49,6 +49,11 @@ export const ScreenEditorContextProvider: FC<TScreenEditorContextProviderProps> 
           category: EEditorToolCategory.ADVANCED,
           displayName: 'Контейнер',
           component: DrawContainerTool
+        },
+        [EEditorTool.CHART]: {
+          category: EEditorToolCategory.ADVANCED,
+          displayName: 'Canvas',
+          component: DrawChartsTool
         },
         [EEditorTool.TEXT]: {
           category: EEditorToolCategory.ADVANCED,

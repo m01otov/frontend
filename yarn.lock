@@ -594,6 +594,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@kurkle/color@npm:^0.3.0":
+  version: 0.3.2
+  resolution: "@kurkle/color@npm:0.3.2"
+  checksum: 79e97b31f8f6efb28c69d373f94b0c7480226fe8ec95221f518ac998e156444a496727ce47de6d728eb5c3369288e794cba82cae34253deb0d472d3bfe080e49
+  languageName: node
+  linkType: hard
+
 "@lukoil/scad-file-explorer@workspace:^, @lukoil/scad-file-explorer@workspace:ide/file-explorer":
   version: 0.0.0-use.local
   resolution: "@lukoil/scad-file-explorer@workspace:ide/file-explorer"
@@ -912,6 +919,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@lukoil/scad@workspace:."
   dependencies:
+    chart.js: ^4.4.2
     react-hook-form: ^7.47.0
   languageName: unknown
   linkType: soft
@@ -1662,6 +1670,15 @@ __metadata:
   version: 0.7.0
   resolution: "chardet@npm:0.7.0"
   checksum: 6fd5da1f5d18ff5712c1e0aed41da200d7c51c28f11b36ee3c7b483f3696dabc08927fc6b227735eb8f0e1215c9a8abd8154637f3eff8cada5959df7f58b024d
+  languageName: node
+  linkType: hard
+
+"chart.js@npm:^4.4.2":
+  version: 4.4.2
+  resolution: "chart.js@npm:4.4.2"
+  dependencies:
+    "@kurkle/color": ^0.3.0
+  checksum: 72506af9abd33dd99484322dd26e854693323959fe2d6e750bf670e3959737bc195807e91a4d939bc04124c05c7a2f3c435e52d1a668e0e945869f37fcba90a8
   languageName: node
   linkType: hard
 
